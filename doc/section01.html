@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - 상세페이지</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .txt_blue {
+            color: #0d6efd;
+        }
+
+        /* flex-container */
+        .container {
+            display: flex;
+            width: 1170px;
+            margin: 0 auto;
+            /* gap: 30px; */
+        }
+
+        /* container */
+        .inner {
+            width: 1170px;
+            margin: 0 auto;
+        }
+
+        .about {
+            padding: 100px 0;
+            letter-spacing: -0.025em;
+            font-size: 15px;
+        }
+
+
+
+        .about h2 {
+            font-size: 29px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .about h2::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: #aaaaaa;
+            margin: 15px auto;
+        }
+
+        .about>p {
+            margin-bottom: 50px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .about img {
+            width: 100%;
+        }
+
+        .about .container {
+            margin: 0 auto 100px auto;
+            justify-content: space-between;
+        }
+
+
+        .about .tit {
+            line-height: 1.45;
+            margin-bottom: 50px;
+            font-size: 25px;
+            font-weight: 500;
+
+        }
+
+        .about .container p {
+            line-height: 1.45;
+            margin-bottom: 30px;
+        }
+
+        .about figure {
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .about h3 {
+            position: relative;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 0 0 30px 10px;
+        }
+
+        .about h3::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 3px;
+            height: 16px;
+            background: #0d6efd;
+
+        }
+
+        .table {
+            width: 100%;
+            /* border-bottom: 1px solid #333; 이 안됨 */
+            border-spacing: 0;
+            border-collapse: collapse;
+            border-top: 2px solid #0d6efd;
+        }
+
+        .table tr {
+            border-bottom: 1px solid #ddd;
+
+        }
+
+        .table td {
+            /* border: 1px solid #f00; */
+            border-left: 1px solid #ddd;
+            padding: 15px;
+        }
+
+        .table th {
+            text-align: left;
+            background: #f7f7f7;
+            padding: 15px;
+        }
+
+        .responstive_table {
+            width: 100%;
+            overflow-x: scroll;
+        }
+    </style>
+</head>
+
+<!-- br 태그는 줄바꿈에만 사용하자. 공간을 만드는 것은 좋지 않다. -->
+
+<body>
+    <section class="about">
+        <h2><span class="txt_blue">CEO'S</span> GREETINGS</h2>
+        <p>여러분과 새로운 미래를 향해 달려갑니다</p>
+        <div class="container">
+            <div class="des">
+                <p class="tit">웹서비스의<span class="txt_blue"> 새로운 미래를</span><br />
+                    <span class="txt_blue">제가</span> 만들어 가겠습니다.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos rerum facere aliquam ipsum!<br />
+                    corporis fugiat dolorum saepe a, repudiandae iste accusantium officiis officia unde.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores mollitia ex tempore,<br />
+                    accusamus voluptatem aperiam nesciunt doloremque repudiandae, inventore eius harum <br />
+                    perspiciatis! Iure, recusandae.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, neque?<br />Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Nemo, aspernatur.</p>
+
+                <p>태서경 드림</p>
+            </div>
+            <figure>
+                <img src="../img/hd01.jpg" alt="">
+            </figure>
+        </div>
+        <div class="inner">
+            <h3>주요현황</h3>
+            <div class="responstive_table">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <!-- 칸 안에 공백이 있으면 줄바꿈이 된다 -->
+                            <th>주 소</th>
+                            <td>부산시 동래구 사직동 1234-56 쌍둥이 돼지국밥 옆</td>
+                        </tr>
+                        <tr>
+                            <th>전화번호</th>
+                            <td>051-000-0000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
