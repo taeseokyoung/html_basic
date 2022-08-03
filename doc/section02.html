@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - 상세페이지</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        /* * {
+            outline: 1px solid #ddd;
+        } */
+
+        .txt_blue {
+            color: #0d6efd;
+        }
+
+        .dotList li {
+            position: relative;
+            padding: 0 0 0 20px;
+            /* 줄바꿈된 li를 위해서 이렇게 해주는 것이 좋다. */
+            line-height: 1.2;
+            margin: 0 0 5px 0;
+        }
+
+        .dotList li::before {
+            content: "";
+            /* 
+            이렇게 만들었더니 글자가 길어졌을 때 대처를 하지 못해서 수정햇다.
+            display: inline-block;
+            vertical-align: middle; */
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 2px;
+            height: 2px;
+            background: #0d6efd;
+            margin: 0 10px 0 0;
+
+        }
+
+        .container {
+            display: flex;
+            width: 1170px;
+            margin: 0 auto;
+        }
+
+        .Business {
+            padding: 100px 0;
+            letter-spacing: -0.025em;
+            font-size: 15px;
+        }
+
+        .Business h2 {
+            font-size: 29px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .Business h2::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: #aaaaaa;
+            margin: 15px auto;
+        }
+
+        .Business>p {
+            margin-bottom: 50px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .Business .container img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            /* 정해진 영역 안에서 fixed같은 효과를 낼수있는 재밌는 태그 */
+        }
+
+        .Business figure {
+            flex: 1;
+            /* width: 25%; 도 된다. */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .Business figure~figure {
+            border-left: 1px solid rgb(255, 255, 255, 0);
+        }
+
+        /* cover를 띄우는 과정에서 이미지들이 쪼그라들었다. */
+        .Business .cover {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            /* auto 안돼~ */
+            background: rgba(0, 0, 0, 1);
+            color: #fff;
+            transition: left 0.5s;
+        }
+
+        .Business figure:hover .cover {
+            left: -50%;
+        }
+
+
+        .Business figure .cover {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            /* justify-content: center; */
+            /* align-items: flex-start; */
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            /* auto 안돼~ */
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            transition: left 0.5s;
+            padding: 40px 20px;
+        }
+
+        .Business figure:hover .cover {
+            left: 0;
+        }
+
+        .Business figure h3 {
+            /* 처음에 선이 주요사업 1에만 끄였다. 선을 끝까지 긋기 위해 width: 100%; 또는 (flex상태의 아이템에) align-self stretch 를 줬다. */
+            /* align-self: stretch; */
+            margin: 0 0 20px 0;
+            padding: 0 0 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        .Business figure p {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.25;
+        }
+
+        /* li>a a에 padding 잡아줘야한다. 손가락 이어지기 위해서 */
+        .Business figure .cover a {
+            /* display: inline-block; */
+            align-self: flex-start;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            margin-top: auto;
+            padding: 10px 15px;
+        }
+
+        /* float과 padding */
+        .Business .inner {
+            width: 1200px;
+            margin: 0 auto;
+            /* 1. overflow: hidden; float으로 인해 사라진 section의 padding 살리는 방법 - 다단메뉴 같은 overflow hidden 쓰이는 곳에서 문제생길 수 있다. */
+        }
+
+        /* 2. clear fix */
+        /* 3. clear fix 를 common.css에 넣어두고 사용해보자 */
+        .Business .inner::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .Business .inner>div {
+            float: left;
+            width: 50%;
+        }
+
+        .Business .inner>div:nth-of-type(1) {
+            padding: 0 15px;
+        }
+
+        .Business .container {
+            margin: 0 auto 100px auto;
+        }
+
+        /* .Business .tit {
+            border-left: 3px solid #0d6efd;
+            padding: 0 20px 0 0;
+        } */
+
+        /* display block 을 안쓰고 들어간다? */
+        .Business .tit strong {
+            position: relative;
+            display: block;
+            margin: 0 0 20px 0;
+            padding: 0 0 0 20px;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .Business .tit p {
+            padding: 0 0 0 20px;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        .Business .tit strong::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            /* height: 100%; */
+            height: 80px;
+            background: #0d6efd;
+        }
+
+        /* flex 때문에 테두리가 쭈욱 늘어났다. flex grow 실패 > justify-content center실패 > align-items flex start 성공 - h3 아래 border에 문제가 생겨서 a 에만 align-self: flex-start; */
+
+
+        /* 
+        왼쪽에서 커버가 슬라이드 될 때 이미지도 같이 움직이는 방법
+
+        .Business figure .inbox {
+            transition: 0.5s 0.3s;
+        }
+
+        .Business figure:hover .inbox {
+            transform: translateX(100px);
+        }
+        
+        .Business .cover {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 1);
+            color: #fff;
+            transition: left 0.5s;
+        }
+
+        .Business figure:hover .cover {
+            left: -50%;
+        }
+
+        .Business figure .inbox {
+            transition: 0.5s 0.3s;
+        }
+
+        .Business figure:hover .inbox {
+            transform: translateX(100px);
+        } */
+    </style>
+</head>
+
+<body>
+    <section class="Business">
+        <h2><span class="txt_blue">OUR</span> BUSINESS</h2>
+        <p>여러분과 새로운 미래를 향해 달려갑니다</p>
+        <div class="container">
+            <figure>
+                <div class="inbox">
+                    <img src="../img/hd01.jpg" alt="">
+                </div>
+                <div class="cover">
+                    <h3>주요사업 1</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, excepturi?</p>
+                    <a href="">자세히보기......</a>
+                </div>
+            </figure>
+            <figure>
+                <div class="inbox">
+                    <img src="../img/hd02.jpg" alt="">
+                </div>
+                <div class="cover">
+                    <h3>주요사업 2</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, excepturi?</p>
+                    <a href="">자세히보기</a>
+                </div>
+            </figure>
+            <figure>
+                <div class="inbox">
+                    <img src="../img/hd03.jpg" alt="">
+                </div>
+                <div class="cover">
+                    <h3>주요사업 3</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, excepturi?</p>
+                    <a href="">자세히보기</a>
+                </div>
+            </figure>
+            <figure>
+                <div class="inbox">
+                    <img src="../img/hd04.jpg" alt="">
+                </div>
+                <div class="cover">
+                    <h3>주요사업 4</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, excepturi?</p>
+                    <a href="">자세히보기</a>
+                </div>
+            </figure>
+        </div>
+        <div class="inner">
+            <div class="tit">
+                <!-- 좌우패딩마진만 먹는다.(인라인) -->
+                <strong>심플하지만 다 갖춘 태서경.</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quibusdam quos velit?</p>
+            </div>
+            <div class="list">
+                <ul class="dotList">
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, excepturi? Lorem ipsum dolor, sit
+                        amet consectetur adipisicing elit. Ut, excepturi?</li>
+                    <li>doloremque fuga eaque mollitia.</li>
+                    <li>consequatur commodi quam aperiam.</li>
+                </ul>
+            </div>
+            <!-- 자식 div div 맞춰주기 위해 한꺼풀 싸줬다. -->
+        </div>
+    </section>
+</body>
+
+</html>
