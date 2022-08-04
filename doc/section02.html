@@ -7,72 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>02 - 상세페이지</title>
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/basic.css">
     <style>
-        /* * {
-            outline: 1px solid #ddd;
-        } */
-
-        .txt_blue {
-            color: #0d6efd;
-        }
-
-        .dotList li {
-            position: relative;
-            padding: 0 0 0 20px;
-            /* 줄바꿈된 li를 위해서 이렇게 해주는 것이 좋다. */
-            line-height: 1.2;
-            margin: 0 0 5px 0;
-        }
-
-        .dotList li::before {
-            content: "";
-            /* 
-            이렇게 만들었더니 글자가 길어졌을 때 대처를 하지 못해서 수정햇다.
-            display: inline-block;
-            vertical-align: middle; */
-            position: absolute;
-            top: 10px;
-            left: 0;
-            width: 2px;
-            height: 2px;
-            background: #0d6efd;
-            margin: 0 10px 0 0;
-
-        }
-
-        .container {
-            display: flex;
-            width: 1170px;
-            margin: 0 auto;
-        }
-
-        .Business {
-            padding: 100px 0;
-            letter-spacing: -0.025em;
-            font-size: 15px;
-        }
-
-        .Business h2 {
-            font-size: 29px;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .Business h2::after {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 3px;
-            background: #aaaaaa;
-            margin: 15px auto;
-        }
-
-        .Business>p {
-            margin-bottom: 50px;
-            font-weight: 500;
-            text-align: center;
-        }
-
         .Business .container img {
             width: 100%;
             height: 400px;
@@ -156,19 +92,19 @@
         }
 
         /* float과 padding */
-        .Business .inner {
+        /* .Business .inner {
             width: 1200px;
-            margin: 0 auto;
-            /* 1. overflow: hidden; float으로 인해 사라진 section의 padding 살리는 방법 - 다단메뉴 같은 overflow hidden 쓰이는 곳에서 문제생길 수 있다. */
-        }
+            margin: 0 auto; } */
+        /* 1. overflow: hidden; float으로 인해 사라진 section의 padding 살리는 방법 - 다단메뉴 같은 overflow hidden 쓰이는 곳에서 문제생길 수 있다. */
+
 
         /* 2. clear fix */
         /* 3. clear fix 를 common.css에 넣어두고 사용해보자 */
-        .Business .inner::after {
+        /* .Business .inner::after {
             content: '';
             display: block;
             clear: both;
-        }
+        } */
 
         .Business .inner>div {
             float: left;
@@ -184,7 +120,7 @@
         }
 
         /* .Business .tit {
-            border-left: 3px solid #0d6efd;
+            border-left: 3px solid var(--mc);
             padding: 0 20px 0 0;
         } */
 
@@ -212,7 +148,7 @@
             width: 3px;
             /* height: 100%; */
             height: 80px;
-            background: #0d6efd;
+            background: var(--mc);
         }
 
         /* flex 때문에 테두리가 쭈욱 늘어났다. flex grow 실패 > justify-content center실패 > align-items flex start 성공 - h3 아래 border에 문제가 생겨서 a 에만 align-self: flex-start; */
@@ -255,8 +191,15 @@
 </head>
 
 <body>
-    <section class="Business">
-        <h2><span class="txt_blue">OUR</span> BUSINESS</h2>
+    <nav>
+        <ul>
+            <li><a href="section01.html">menu01</a></li>
+            <li><a href="section02.html">menu02</a></li>
+            <li><a href="section03.html">menu03</a></li>
+        </ul>
+    </nav>
+    <section class="Business basicSection">
+        <h2><span class="mainColor">OUR</span> BUSINESS</h2>
         <p>여러분과 새로운 미래를 향해 달려갑니다</p>
         <div class="container">
             <figure>

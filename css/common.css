@@ -174,12 +174,22 @@ textarea {
     margin: 0 auto;
 } */
 
-.row:after,
+/* .row:after,
 .row:before {
     content: "";
     display: block;
 }
 
 .row:after {
+    clear: both;
+} */
+.row::before,
+.row::after {
+    content: "";
+    display: table;
+    /* display: block; 도 가능 */
+}
+
+.row::after {
     clear: both;
 }

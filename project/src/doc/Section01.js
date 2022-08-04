@@ -1,8 +1,8 @@
-import '../css/section01.css';
+import '../css/main.css';
 
 const Section01 = () => {
     return (
-        <section className="about">
+        <section className="about basicSection">
             <h2><span className="mainColor">CEO'S</span> GREETINGS</h2>
             <p>여러분과 새로운 미래를 향해 달려갑니다</p>
             <div className="container">

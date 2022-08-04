@@ -1,0 +1,266 @@
+.Nav {
+    margin: 100px 0;
+    line-height: 50px;
+    border-top: 1px solid var(--gc);
+    border-bottom: 1px solid var(--gc);
+}
+
+.Nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+.Nav ul>li {
+    padding: 0 20px;
+}
+
+.Nav ul>li~li {
+    border-left: 1px solid var(--gc);
+}
+
+/* section01 */
+.about img {
+    width: 100%;
+}
+
+.about .container {
+    margin: 0 auto 100px auto;
+    justify-content: space-between;
+}
+
+
+.about .tit {
+    line-height: 1.45;
+    margin-bottom: 50px;
+    font-size: 25px;
+    font-weight: 500;
+
+}
+
+.about .container p {
+    line-height: 1.45;
+    margin-bottom: 30px;
+}
+
+.about figure {
+    height: 400px;
+    overflow: hidden;
+}
+
+.about .inner {
+    width: 1170px;
+}
+
+.about h3 {
+    position: relative;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0 0 30px 10px;
+}
+
+.about h3::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 3px;
+    height: 16px;
+    background: var(--mc);
+
+}
+
+/* section02 */
+.Business .container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.Business figure {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.Business figure~figure {
+    border-left: 1px solid rgb(255, 255, 255, 0);
+}
+
+.Business .cover {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    color: #fff;
+    transition: left 0.5s;
+}
+
+.Business figure:hover .cover {
+    left: -50%;
+}
+
+
+.Business figure .cover {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: left 0.5s;
+    padding: 40px 20px;
+}
+
+.Business figure:hover .cover {
+    left: 0;
+}
+
+.Business figure h3 {
+    margin: 0 0 20px 0;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.Business figure p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.25;
+}
+
+.Business figure .cover a {
+    align-self: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: auto;
+    padding: 10px 15px;
+}
+
+.Business .inner>div {
+    float: left;
+    width: 50%;
+}
+
+.Business .inner>div:nth-of-type(1) {
+    padding: 0 15px;
+}
+
+.Business .container {
+    margin: 0 auto 100px auto;
+}
+
+.Business .tit strong {
+    position: relative;
+    display: block;
+    margin: 0 0 20px 0;
+    padding: 0 0 0 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.Business .tit p {
+    padding: 0 0 0 20px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.Business .tit strong::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 80px;
+    background: var(--mc);
+}
+
+/* section03 */
+.Business02 .container {
+    gap: 50px;
+    margin-bottom: 50px;
+
+}
+
+.Business02 .container>div {
+    flex: 1;
+}
+
+.Business02 .left img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.Business02 .right {
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid var(--dc);
+    padding: 40px 0 0 0;
+}
+
+.Business02 .right h3 {
+    font-size: 31px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.Business02 .right p {
+    margin: 0 0 30px 0;
+}
+
+.Business02 .right .bottom {
+    margin: auto 0 0 0;
+    padding: 20px 20px 40px 20px;
+    background: var(--lc);
+    border-top: 1px solid var(--gc);
+    line-height: 1.3;
+}
+
+.Business02 .inner {
+    padding: 0 15px;
+}
+
+.Business02 .inner h3 {
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0 0 30px 0;
+}
+
+.Business02 .inner h3::before {
+    content: "/";
+    display: inline-block;
+    transform: translateY(-10px) rotate(35deg);
+    transform-origin: bottom;
+    color: var(--mc);
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0 10px 0 0;
+}
+
+.Business02 .inner ul {
+    padding: 20px 0;
+    border-top: 1px solid var(--dc);
+    border-bottom: 1px solid var(--dc);
+}
+
+.Business02 .inner ul>li {
+    float: left;
+    width: 50%;
+    padding: 5px 0;
+}
+
+.Business02 .inner ul>li::before {
+    content: attr(data-num);
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 5px;
+    color: var(--lc);
+    background: var(--dc);
+    border-radius: 13px;
+    font-style: italic;
+}

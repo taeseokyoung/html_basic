@@ -7,54 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>01 - 상세페이지</title>
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/basic.css">
     <style>
-        .txt_blue {
-            color: #0d6efd;
-        }
-
-        /* flex-container */
-        .container {
-            display: flex;
-            width: 1170px;
-            margin: 0 auto;
-            /* gap: 30px; */
-        }
-
-        /* container */
-        .inner {
-            width: 1170px;
-            margin: 0 auto;
-        }
-
-        .about {
-            padding: 100px 0;
-            letter-spacing: -0.025em;
-            font-size: 15px;
-        }
-
-
-
-        .about h2 {
-            font-size: 29px;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .about h2::after {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 3px;
-            background: #aaaaaa;
-            margin: 15px auto;
-        }
-
-        .about>p {
-            margin-bottom: 50px;
-            font-weight: 500;
-            text-align: center;
-        }
-
         .about img {
             width: 100%;
         }
@@ -83,6 +37,10 @@
             overflow: hidden;
         }
 
+        .about .inner {
+            width: 1170px;
+        }
+
         .about h3 {
             position: relative;
             font-size: 17px;
@@ -97,38 +55,8 @@
             left: 0;
             width: 3px;
             height: 16px;
-            background: #0d6efd;
+            background: var(--mc);
 
-        }
-
-        .table {
-            width: 100%;
-            /* border-bottom: 1px solid #333; 이 안됨 */
-            border-spacing: 0;
-            border-collapse: collapse;
-            border-top: 2px solid #0d6efd;
-        }
-
-        .table tr {
-            border-bottom: 1px solid #ddd;
-
-        }
-
-        .table td {
-            /* border: 1px solid #f00; */
-            border-left: 1px solid #ddd;
-            padding: 15px;
-        }
-
-        .table th {
-            text-align: left;
-            background: #f7f7f7;
-            padding: 15px;
-        }
-
-        .responstive_table {
-            width: 100%;
-            overflow-x: scroll;
         }
     </style>
 </head>
@@ -136,13 +64,20 @@
 <!-- br 태그는 줄바꿈에만 사용하자. 공간을 만드는 것은 좋지 않다. -->
 
 <body>
-    <section class="about">
-        <h2><span class="txt_blue">CEO'S</span> GREETINGS</h2>
+    <nav>
+        <ul>
+            <li><a href="section01.html">menu01</a></li>
+            <li><a href="section02.html">menu02</a></li>
+            <li><a href="section03.html">menu03</a></li>
+        </ul>
+    </nav>
+    <section class="about basicSection">
+        <h2><span>CEO'S</span> GREETINGS</h2>
         <p>여러분과 새로운 미래를 향해 달려갑니다</p>
         <div class="container">
             <div class="des">
-                <p class="tit">웹서비스의<span class="txt_blue"> 새로운 미래를</span><br />
-                    <span class="txt_blue">제가</span> 만들어 가겠습니다.
+                <p class="tit">웹서비스의<span class="mainColor"> 새로운 미래를</span><br />
+                    <span class="mainColor">제가</span> 만들어 가겠습니다.
                 </p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos rerum facere aliquam ipsum!<br />
                     corporis fugiat dolorum saepe a, repudiandae iste accusantium officiis officia unde.</p>
@@ -164,6 +99,13 @@
             <h3>주요현황</h3>
             <div class="responstive_table">
                 <table class="table">
+                    <caption>* description</caption>
+                    <colgroup>
+                        <col style="width:20%;" />
+                        <col style="width:30%;" />
+                        <col style="width:20%;" />
+                        <col style="width:30%;" />
+                    </colgroup>
                     <tbody>
                         <tr>
                             <!-- 칸 안에 공백이 있으면 줄바꿈이 된다 -->
