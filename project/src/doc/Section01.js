@@ -26,7 +26,7 @@ const Section01 = () => {
                     <img src="../img/hd01.jpg" alt="" />
                 </figure>
             </div>
-            <div className="inner">
+            <div className="inner pd15">
                 <h3>주요현황</h3>
                 <div className="responstive_table">
                     <table className="table">
