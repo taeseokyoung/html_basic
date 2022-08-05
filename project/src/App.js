@@ -11,7 +11,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <Nav />
-
       <Routes>
         <Route path="/" element={<Section04 />} />
         <Route path="/section01" element={<Section01 />} />
